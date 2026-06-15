@@ -1,0 +1,10 @@
+{
+  "id": "deepseek-dashboard",
+  "name": "DeepSeek Dashboard",
+  "version": "1.0.0",
+  "minAppVersion": "1.5.0",
+  "description": "在 Obsidian 中实时监控 DeepSeek API 余额、月消费、用量明细与缓存命中率",
+  "author": "",
+  "authorUrl": "",
+  "isDesktopOnly": false
+}

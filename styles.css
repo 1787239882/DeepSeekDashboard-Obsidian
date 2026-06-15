@@ -1,0 +1,293 @@
+/* ==============================================
+ *  DeepSeek Dashboard — 样式
+ *  对应 Swift 端 BalanceCard / MainContentView 设计
+ * ============================================== */
+
+/* ---- 状态栏 ---- */
+.ds-status-bar {
+  cursor: pointer;
+  font-size: var(--font-smallest);
+  padding: 0 6px;
+  border-radius: 3px;
+  transition: background 0.15s;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.ds-status-bar:hover {
+  background: var(--background-modifier-hover);
+}
+.ds-status-bar:active {
+  opacity: 0.7;
+}
+.ds-sb-ok {
+  color: var(--color-green, #4caf50);
+  font-weight: 600;
+  letter-spacing: -0.3px;
+}
+.ds-sb-warn {
+  color: var(--color-yellow, #ffc107);
+  font-weight: 600;
+}
+.ds-sb-muted {
+  color: var(--text-muted);
+}
+
+/* ---- 仪表盘容器 ---- */
+.deepseek-dashboard {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 12px;
+  gap: 8px;
+  overflow-y: auto;
+}
+
+.ds-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--background-modifier-border);
+}
+.ds-header-title {
+  font-size: var(--font-ui-medium);
+  font-weight: 600;
+}
+.ds-header-time {
+  font-size: var(--font-smaller);
+  color: var(--text-muted);
+}
+
+.ds-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ds-footer {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+  padding-top: 8px;
+  border-top: 1px solid var(--background-modifier-border);
+}
+
+/* ---- 按钮 ---- */
+.ds-btn {
+  background: var(--interactive-normal);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: var(--button-radius, 4px);
+  color: var(--text-normal);
+  cursor: pointer;
+  font-size: var(--font-smaller);
+  padding: 4px 10px;
+  transition: background 0.15s;
+}
+.ds-btn:hover {
+  background: var(--interactive-hover);
+}
+.ds-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ---- 卡片 ---- */
+.ds-card {
+  background: var(--background-secondary);
+  border-radius: 8px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.ds-card-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+}
+.ds-card-icon {
+  font-size: 20px;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+.ds-icon-ok {
+  background: rgba(0, 200, 83, 0.15);
+  color: var(--color-green);
+}
+.ds-icon-warn {
+  background: rgba(255, 193, 7, 0.15);
+  color: var(--color-yellow);
+}
+.ds-icon-ok::before { content: '$'; font-weight: bold; }
+.ds-icon-warn::before { content: '⚠'; font-weight: bold; }
+
+.ds-card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+.ds-card-value {
+  font-size: var(--font-ui-medium);
+  font-weight: 600;
+  font-family: var(--font-monospace);
+  letter-spacing: -0.5px;
+}
+.ds-value-warn {
+  color: var(--color-yellow);
+}
+.ds-value-muted {
+  color: var(--text-muted);
+}
+.ds-card-label {
+  font-size: var(--font-smallest);
+  color: var(--text-muted);
+}
+
+.ds-divider-v {
+  width: 1px;
+  height: 32px;
+  background: var(--background-modifier-border);
+}
+
+/* ---- 缓存命中率 ---- */
+.ds-cache-row {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 0;
+}
+.ds-cache-chip {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+.ds-cache-label {
+  font-size: var(--font-smallest);
+  color: var(--text-muted);
+}
+.ds-cache-value {
+  font-size: var(--font-ui-medium);
+  font-weight: 700;
+  font-family: var(--font-monospace);
+}
+
+/* ---- 缓存命中率趋势 ---- */
+.ds-section-title {
+  font-size: var(--font-smaller);
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--text-normal);
+}
+.ds-trend-bars {
+  display: flex;
+  justify-content: space-between;
+  gap: 4px;
+}
+.ds-trend-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+.ds-trend-date {
+  font-size: 10px;
+  color: var(--text-muted);
+}
+.ds-trend-value {
+  font-size: 13px;
+  font-weight: 600;
+  font-family: var(--font-monospace);
+}
+.ds-trend-avg {
+  font-size: var(--font-smallest);
+  color: var(--text-muted);
+  text-align: right;
+  margin-top: 4px;
+}
+
+/* ---- 用量明细 ---- */
+.ds-usage-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px;
+  cursor: pointer;
+  user-select: none;
+}
+.ds-usage-header:hover {
+  background: var(--background-modifier-hover);
+}
+.ds-usage-toggle {
+  font-size: 10px;
+  color: var(--text-muted);
+}
+.ds-usage-title {
+  font-size: var(--font-smaller);
+  font-weight: 500;
+  flex: 1;
+}
+.ds-usage-summary {
+  font-size: var(--font-smallest);
+  color: var(--text-muted);
+  font-family: var(--font-monospace);
+}
+
+.ds-usage-body {
+  padding: 0 12px 12px;
+}
+.ds-model-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 0;
+}
+.ds-model-name {
+  font-size: var(--font-smaller);
+  font-weight: 500;
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.ds-model-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1px;
+  min-width: 60px;
+}
+.ds-stat-label {
+  font-size: 10px;
+  color: var(--text-muted);
+}
+.ds-stat-value {
+  font-size: var(--font-smaller);
+  font-weight: 600;
+  font-family: var(--font-monospace);
+}
+
+.ds-divider-h {
+  height: 1px;
+  background: var(--background-modifier-border);
+  margin: 0;
+}
+
+/* ---- 加载/错误/提示 ---- */
+.ds-loading, .ds-error, .ds-hint {
+  padding: 16px;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: var(--font-smaller);
+}
+.ds-error {
+  color: var(--text-error);
+}
